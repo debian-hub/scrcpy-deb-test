@@ -24,6 +24,7 @@ jobs:
 
     - name: Install Dependencies
       run: |
+        export DEBIAN_FRONTEND=noninteractive
         apt update
         apt install wget dpkg ffmpeg libsdl2-2.0-0 adb wget \
                  gcc git pkg-config meson ninja-build libsdl2-dev \
@@ -61,8 +62,9 @@ jobs:
 
     - name: Install Dependencies
       run: |
-        apt update
-        apt install wget dpkg ffmpeg libsdl2-2.0-0 adb wget \
+        export DEBIAN_FRONTEND=noninteractive
+        sudo apt update
+        sudo apt install wget dpkg ffmpeg libsdl2-2.0-0 adb wget \
                  gcc git pkg-config meson ninja-build libsdl2-dev \
                  libavcodec-dev libavdevice-dev libavformat-dev libavutil-dev \
                  libswresample-dev libusb-1.0-0 libusb-1.0-0-dev -y
